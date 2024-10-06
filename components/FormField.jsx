@@ -11,7 +11,7 @@ const FormField = ({title, value, placeholder, handleChangeText, otherStyles, ..
     <View className={`space-y-2 ${otherStyles}`}>
       <Text className="text-base text-black font-psemibold">{title}</Text>
       
-      <View className="w-full h-16 px-4 bg-slate-50 rounded-2xl border border-gray-200 focus:border-blue-600 items-center">
+      <View className="w-full h-16 px-4 bg-slate-50 rounded-2xl border border-gray-200 focus:border-blue-600 items-center flex-row">
         <TextInput className="flex-1 text-black font-psemibold text-base"
             value={value}
             placeholder={placeholder}
@@ -21,10 +21,14 @@ const FormField = ({title, value, placeholder, handleChangeText, otherStyles, ..
         />
 
         {title === 'Password' && (<TouchableOpacity onPress={() => setsetshowPassword(!showPassword)}>
-            <Image source={!showPassword ? icons.eye : icons.eyeHide} /></TouchableOpacity> ) }
+            <Image source={!showPassword ? icons.eye : icons.eyeHide}
+            className="w-6 h-6"
+            resizeMode='contain'
+            />
+          </TouchableOpacity> ) }
       </View>
     </View>
   )
 }
 
-export default FormField
+export default FormField 

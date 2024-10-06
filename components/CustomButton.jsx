@@ -12,5 +12,5 @@ const CustomButton = ({ title, handlePress, containerStyles, textStyles, isLoadi
     </TouchableOpacity>
   )
 }
-
+  
 export default CustomButton
