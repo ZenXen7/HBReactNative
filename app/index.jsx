@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, ScrollView, Text, View } from 'react-native';
+import { Button, Image, ScrollView, Text, View } from 'react-native';
 import { Link } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -16,12 +16,21 @@ export default function App() {
       >
         <View className="w-full justify-start items-center h-full px-4">
           <Image
-            source={images.hblogo}
-            className="mt-5 w-[230px] h-[84px]"
+            source={images.hblogo2}
+            className="mt-4 w-[250px] h-[90px]"
             resizeMode="contain"
           ></Image>
 
-         
+          <Image 
+          source={images.hcard}
+          className="mt-6 max-w-[400px] w-full h-[320px]"
+          resizeMode="contain"
+          
+          />
+
+            <View className="relative">
+              <Text className="text-3xl text-black font-sfbold text-center">Your all-in-one medical history tracker</Text>
+            </View>
         </View>
 
 
@@ -29,4 +38,3 @@ export default function App() {
     </SafeAreaView>
   );
 }
-
