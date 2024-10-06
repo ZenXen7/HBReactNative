@@ -25,9 +25,9 @@ const SignIn = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>
-        <View className="w-full justify-center h-[60vh] px-4 my-8 pt-20">
+        <View className="w-full justify-center  h-[60vh] px-4 my-8 pt-20">
           <Image source={images.hblogo2}
-            resizeMode='contain' className="w-[190px] h-[90px]"
+            resizeMode='contain' className="ml-[70px] w-[200px] h-[100px]"
           />
           <Text className="text-3xl text-black text-semibold mt-10 font-sfbold">Log in</Text>
           <FormField
