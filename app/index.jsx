@@ -25,7 +25,7 @@ export default function App() {
 
           <Image
             source={images.hcard}
-            className="max-w-[400px] w-full h-[320px] mb-6"
+            className="max-w-[400px] w-full h-[320px] mb-3"
             resizeMode="contain"
           />
 
