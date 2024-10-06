@@ -11,7 +11,7 @@ export default function App() {
     <SafeAreaView className="bg-primary h-full">
       <ScrollView
         contentContainerStyle={{
-          flexGrow: 1, 
+          flexGrow: 0.7, 
           justifyContent: 'center', 
           alignItems: 'center',
         }}
@@ -19,7 +19,7 @@ export default function App() {
         <View className="w-full items-center px-4">
           <Image
             source={images.hblogo2}
-            className="mb-4 w-[250px] h-[90px]"
+            className="mb-2 w-[250px] h-[110px]"
             resizeMode="contain"
           />
 
