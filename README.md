@@ -14,8 +14,6 @@ Welcome to **Healthbook** — a cutting-edge digital health tracker designed to 
 - **Secure Login & Signup**  
   Fast, secure, and user-friendly login/signup screens to ensure your health data stays private and accessible only to you.
 
-- **Personalized Dashboard**  
-  View and manage your medical history, upcoming appointments, and more through a centralized dashboard designed with user experience in mind.
 
 ## 🎨 Screenshots
 
