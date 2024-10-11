@@ -1,6 +1,3 @@
-Here's a rewritten, polished version of your React Native application's README:
-
----
 
 # 📱 React Native Healthbook Application
 
