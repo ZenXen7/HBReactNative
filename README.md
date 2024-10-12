@@ -11,6 +11,8 @@ Welcome to **Healthbook** — a cutting-edge digital health tracker designed to 
 - **Secure Login & Signup**  
   Fast, secure, and user-friendly login/signup screens to ensure your health data stays private and accessible only to you.
 
+- **Database**  
+  Using Appwrite for authentication and database. Might have to do .ASP backend later down the line for appdev.
 
 ## 🎨 Screenshots
 
