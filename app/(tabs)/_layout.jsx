@@ -56,7 +56,7 @@ const TabsLayout = () => {
                             <TabIcon
                                 icon="dashboard"  // Material icon name
                                 color={color}
-                                name="Home"
+                                name="Dashboard"
                                 focused={focused}
                             />
                         )
