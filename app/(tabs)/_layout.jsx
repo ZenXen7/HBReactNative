@@ -14,7 +14,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
             />
            
             {focused && (  
-                <Text className="font-semibold text-xs mt-1" style={{ color }}>
+                <Text className="font-psemibold text-xs mt-1" style={{ color }}>
                     {name}
                 </Text>
             )}
@@ -29,8 +29,8 @@ const TabsLayout = () => {
             <Tabs
                 screenOptions={{
                     tabBarShowLabel: false,
-                    tabBarActiveTintColor: '#46a9d3',  // White for active icons
-                    tabBarInactiveTintColor: '#ffffff', // Gray for inactive icons
+                    tabBarActiveTintColor: '#46a9d3', 
+                    tabBarInactiveTintColor: '#ffffff', 
                     tabBarStyle: {
                        
                         backgroundColor: '#000000',  

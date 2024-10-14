@@ -30,6 +30,7 @@ module.exports = {
         pextrabold: ["Poppins-ExtraBold", "sans-serif"],
         pblack: ["Poppins-Black", "sans-serif"],
         sfbold: ["SFProBold", "sans-serif"],
+        sfmedium: ["SFProMedium", "sans-serif"],
       },
     },
   },
