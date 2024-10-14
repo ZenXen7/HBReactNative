@@ -26,7 +26,8 @@ Welcome to **Healthbook** — a cutting-edge digital health tracker designed to 
 ![Sign Up Page](https://github.com/user-attachments/assets/c6ac39bd-b898-484d-b20e-afbdcf8f1b42)
 
 ### Dashboard Page (Unfinished)
-https://media.discordapp.net/attachments/903191461758107680/1295362303843106826/IMG_6535.png?ex=670e5fa7&is=670d0e27&hm=50dcc67700b59e29ffd7db2ebf1f3b68c6a6ac5ddde39048179f0c20d3c2c81d&=&format=webp&quality=lossless&width=310&height=671
+![image](https://github.com/user-attachments/assets/5c586d61-b6af-4ee4-b35d-91f2272b66c7)
+
 
 
 ## 🛠️ Tech Stack
