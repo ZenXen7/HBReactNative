@@ -9,5 +9,6 @@ import empty from "../assets/images/empty.png";
 import hblogo from "../assets/images/LogoHB2.png";
 import hblogo2 from "../assets/images/LogoHB3.png";
 import hblogosmall from "../assets/images/hbLogoSmall.png";
+import user from "../assets/images/user.png";
 
-export default { profile, thumbnail, hcard, cards, path, logo, logoSmall, empty, hblogo, hblogo2, hblogosmall};
+export default { profile, thumbnail, hcard, cards, path, logo, logoSmall, empty, hblogo, hblogo2, hblogosmall, user};
