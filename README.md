@@ -26,7 +26,8 @@ Welcome to **Healthbook** — a cutting-edge digital health tracker designed to 
 ![Sign Up Page](https://github.com/user-attachments/assets/c6ac39bd-b898-484d-b20e-afbdcf8f1b42)
 
 ### Dashboard Page (Unfinished)
-![image](https://github.com/user-attachments/assets/5c586d61-b6af-4ee4-b35d-91f2272b66c7)
+![image](https://github.com/user-attachments/assets/913d6233-bb68-4320-93c1-46b78ab328ae)
+
 
 
 
