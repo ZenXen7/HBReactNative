@@ -1,22 +1,21 @@
-import { View, Text, Image, ScrollView, Modal, TouchableOpacity, Animated } from 'react-native';
+import { View, Text, Image, ScrollView, Modal, TouchableOpacity, Animated, TouchableWithoutFeedback } from 'react-native';
 import React, { useState } from 'react';
 import { images } from '../../constants';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import ProfileCard from '../../components/ProfileCard';
 import MedCard from '../../components/MedCard';
 import { useGlobalContext } from '../../context/GlobalProvider';
+import MedCardModal from '../../components/MedCardModal'; 
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import VaccCard from '../../components/VaccCard';
 
 const Home = () => {
   const { user } = useGlobalContext();
-  const [modalOpacity] = useState(new Animated.Value(0)); // For opacity
-  const [modalTranslateY] = useState(new Animated.Value(100)); // For translateY
+  const [modalOpacity] = useState(new Animated.Value(0)); 
+  const [modalTranslateY] = useState(new Animated.Value(100)); 
 
-  
- 
   const [isModalVisible, setModalVisible] = useState(false);
-
- 
+  
   const toggleModal = () => {
     if (isModalVisible) {
       Animated.timing(modalOpacity, {
@@ -25,7 +24,6 @@ const Home = () => {
         useNativeDriver: true,
       }).start(() => setModalVisible(false)); 
     } else {
-      
       setModalVisible(true);
       Animated.timing(modalOpacity, {
         toValue: 1,
@@ -39,8 +37,6 @@ const Home = () => {
       }).start();
     }
   };
-  
-  
 
   return (
     <SafeAreaView className="bg-zinc-100 flex-1">
@@ -79,77 +75,62 @@ const Home = () => {
             containerStyles={{ marginBottom: -15 }}
           />
 
-         
-          <TouchableOpacity onPress={toggleModal} style={{ padding: 0, margin: 0 }}>
+          <TouchableOpacity onPress={toggleModal} style={{ padding: 0, margin: 0 }}
+          className="">
+            
             <MedCard
               height="5.8"
               weight="135"
               hbeat="160"
               bmi="28.5"
               hemo="13"
+              
             />
           </TouchableOpacity>
 
           {/* Modal */}
-              <Modal
-          visible={isModalVisible}
-          transparent={true}
-          animationType="none" 
-          onRequestClose={toggleModal}
-        >
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-            <Animated.View 
-              style={{
-                width: 350, 
-                padding: 20, 
-                backgroundColor: 'white', 
-                borderRadius: 20,
-                opacity: modalOpacity, 
-                transform: [{ translateY: modalTranslateY }] 
-              }}
-            >
-              {/* Top right edit button */}
-              <TouchableOpacity onPress={() => console.log("Edit clicked")} style={{ alignSelf: 'flex-end' }}>
-                <MaterialIcons name="edit" size={24} color="black" />
-              </TouchableOpacity>
-              
-              <MedCard
-                height="5.8"
-                weight="135"
-                hbeat="160"
-                bmi="28.5"
-                hemo="13"
-                ethni="Nigger"
-                isModal={true}
-              />
-
-              <TouchableOpacity 
-                onPress={toggleModal} 
-                style={{
-                  height: 35, 
-                  width: 70, 
-                  marginTop: 20, 
-                  alignSelf: 'flex-end', 
-                  backgroundColor: '#000000', 
-                  borderRadius: 10, 
-                  marginRight: 11, 
-                  justifyContent: 'center', 
-                  alignItems: 'center' 
-                }}
-              >
-                <Text 
-                  style={{ 
-                    color: 'white',
-                    textAlign: 'center',
-                    fontSize: 16 
+          <Modal
+            visible={isModalVisible}
+            transparent={true}
+            animationType="none" 
+            onRequestClose={toggleModal}
+          >
+            <TouchableWithoutFeedback onPress={toggleModal}>
+              <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+                <Animated.View
+                  style={{
+                    width: 350, 
+                    padding: 20, 
+                    borderRadius: 20,
+                    opacity: modalOpacity, 
+                    transform: [{ translateY: modalTranslateY }],
                   }}
                 >
-                  Back
-                </Text>
-              </TouchableOpacity>
-            </Animated.View>
+                  <MedCardModal
+                    toggleModal={toggleModal}
+                    height="5.8"
+                    weight="135"
+                    hbeat="160"
+                    bmi="28.5"
+                    hemo="13"
+                    ethni="Hispanic"
+                    bloodP="120 Hg"
+                    bloodS="70mg/dL"
+                    qrCodeIcon="qr-code-outline"
+                  />
+                </Animated.View>
+              </View>
+            </TouchableWithoutFeedback>
+          </Modal>
+
+     
+          <View className="flex-row justify-between">
+            <VaccCard VaccinesIcon="VaccinesIcon"
+            
+            containerStyles="mr-2 -mt-4"/> 
+            <VaccCard containerStyles="-mt-4"/> 
           </View>
-    </Modal>
+          
         </View>
       </ScrollView>
     </SafeAreaView>
