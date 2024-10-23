@@ -1,4 +1,3 @@
-
 # 📱 React Native Healthbook Application
 
 Welcome to **Healthbook** — a cutting-edge digital health tracker designed to manage and monitor your complete medical history all in one place! Whether it's vaccination records, prescriptions, or family health details, Healthbook is your go-to app for simplifying your healthcare management. 
@@ -17,20 +16,19 @@ Welcome to **Healthbook** — a cutting-edge digital health tracker designed to 
 ## 🎨 Screenshots
 
 ### Landing Page
-![Landing Page](https://github.com/user-attachments/assets/8e79b118-924a-4125-8d15-84389a44617f)
+<img src="https://github.com/user-attachments/assets/8e79b118-924a-4125-8d15-84389a44617f" alt="Landing Page" width="300" height="600" />
 
 ### Login Page
-![Login Page](https://github.com/user-attachments/assets/f31cedd1-6c0a-429b-bc18-62f961ac7552)
+<img src="https://github.com/user-attachments/assets/f31cedd1-6c0a-429b-bc18-62f961ac7552" alt="Login Page" width="300" height="600" />
 
 ### Sign Up Page
-![Sign Up Page](https://github.com/user-attachments/assets/c6ac39bd-b898-484d-b20e-afbdcf8f1b42)
+<img src="https://github.com/user-attachments/assets/c6ac39bd-b898-484d-b20e-afbdcf8f1b42" alt="Sign Up Page" width="300" height="600" />
 
 ### Dashboard Page (Unfinished)
-![image](https://github.com/user-attachments/assets/0f2b7052-af29-435a-931c-3e39cd0770ad)
+<img src="https://github.com/user-attachments/assets/c62cdf3c-c7e7-40e6-bf0f-5f379f0ed893" alt="Dashboard Page" width="300" height="600" />
 
-
-
-
+### Modals 
+<img src="https://github.com/user-attachments/assets/8ea6d9a3-8c3a-4622-9f08-a32711889145" alt="Modals" width="300" height="600" />
 
 ## 🛠️ Tech Stack
 
@@ -42,6 +40,3 @@ Welcome to **Healthbook** — a cutting-edge digital health tracker designed to 
 
 - **React Navigation**  
   For smooth, efficient navigation between screens.
-
-
-
