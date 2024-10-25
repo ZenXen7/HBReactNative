@@ -7,7 +7,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 const MedCardModal = ({ toggleModal, height, weight, hbeat, bmi, hemo, isModal, ethni, bloodP, bloodS, qrCodeIcon}) => {
     return (
-        <View style={{ borderRadius: 35}} className="bg-sky-600 p-6 space-y-4">
+        <View style={{ borderRadius: 35}} className="bg-blue-600 p-6 space-y-4">
           
           {/* Header Section */}
           <View className="flex-row justify-between">

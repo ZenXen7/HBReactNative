@@ -1,11 +1,18 @@
 import { View, Text } from 'react-native';
 import React from 'react';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
 
 const MedCard = ({ height, weight, hbeat, bmi, hemo, ethni, containerStyles, isModal }) => {
   return (
     <View style={{ borderRadius: 35, ...containerStyles }} className="bg-blue-600 p-6 space-y-4">
       <View className="space-y-3">
+        
+      <View className="flex-row justify-between mb-2">
+          <Text className="text-2xl font-bold text-white">Medical Card</Text>
+          <MaterialIcons name="vaccines" size={33} color="white" />
+        </View>
+
         {/* Height */}
         {height && (
           <View className="flex-row justify-between">

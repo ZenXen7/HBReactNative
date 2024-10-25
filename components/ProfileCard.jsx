@@ -6,12 +6,14 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 const ProfileCard = ({ name, phone, location, gender, birthDate, qrCodeIcon, containerStyles }) => {
   return (
     <View style={{ borderRadius: 35, ...containerStyles }} className="bg-white p-6 space-y-4">
-
+       {/* <View className="-mb-2">
+          <Text className="text-2xl font-bold text-black">Profile Card</Text>
+        </View> */}
       <View className="flex-row justify-between items-center">
-        <Text className="text-blue-700 text-xl font-sfbold">
+        <Text className="text-blue-700 text-2xl font-sfbold">
           {name}
         </Text>
-        {qrCodeIcon && <Ionicons name={qrCodeIcon} size={27} color="black" />}
+        {qrCodeIcon && <Ionicons name={qrCodeIcon} size={27} color="black" />}  
       </View>
       <View className="space-y-1.5">
         {phone && (
