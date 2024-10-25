@@ -76,7 +76,7 @@ const Home = () => {
           />
 
           <TouchableOpacity onPress={toggleModal} style={{ padding: 0, margin: 0 }}
-          className="">
+          className="" activeOpacity={0.8} >
             
             <MedCard
               height="5.8"
@@ -124,13 +124,31 @@ const Home = () => {
           </Modal>
 
      
-          <View className="flex-row justify-between">
-            <VaccCard VaccinesIcon="VaccinesIcon"
-            
-            containerStyles="mr-2 -mt-4"/> 
-            <VaccCard containerStyles="-mt-4"/> 
-          </View>
-          
+      <View className="flex-row justify-between pr-1 ">
+        <TouchableOpacity 
+            onPress={toggleModal} 
+            className="mr-2 flex-1 h-24 -mt-4"
+            activeOpacity={0.8} 
+            >
+            <VaccCard 
+                VaccinesIcon="VaccinesIcon"
+                containerStyles="w-full h-full"
+            />
+        </TouchableOpacity>
+
+        <TouchableOpacity 
+            onPress={toggleModal} 
+            className="flex-1 h-24 -mt-4"
+            activeOpacity={0.8}
+        >
+            <VaccCard containerStyles="w-full h-full"/>
+        </TouchableOpacity>
+         </View>
+
+          <View></View>
+          <View></View>
+          <View></View>
+          <View></View>
         </View>
       </ScrollView>
     </SafeAreaView>

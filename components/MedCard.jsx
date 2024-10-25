@@ -1,6 +1,8 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+
 
 
 const MedCard = ({ height, weight, hbeat, bmi, hemo, ethni, containerStyles, isModal }) => {
@@ -10,7 +12,7 @@ const MedCard = ({ height, weight, hbeat, bmi, hemo, ethni, containerStyles, isM
         
       <View className="flex-row justify-between mb-2">
           <Text className="text-2xl font-bold text-white">Medical Card</Text>
-          <MaterialIcons name="vaccines" size={33} color="white" />
+          <FontAwesome5 name="file-medical" size={30} color="white" />
         </View>
 
         {/* Height */}
