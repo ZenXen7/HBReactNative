@@ -10,6 +10,7 @@ const ProfileCard = ({ name, phone, location, gender, birthDate, qrCodeIcon, con
           <Text className="text-2xl font-bold text-black">Profile Card</Text>
         </View> */}
       <View className="flex-row justify-between items-center">
+        
         <Text className="text-blue-700 text-2xl font-sfbold">
           {name}
         </Text>

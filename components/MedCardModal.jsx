@@ -3,6 +3,7 @@ import React from 'react';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import QRCode from 'react-native-qrcode-svg';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import Entypo from '@expo/vector-icons/Entypo';
 
 
 const MedCardModal = ({ toggleModal, height, weight, hbeat, bmi, hemo, isModal, ethni, bloodP, bloodS, qrCodeIcon}) => {
@@ -74,14 +75,14 @@ const MedCardModal = ({ toggleModal, height, weight, hbeat, bmi, hemo, isModal, 
             {bloodP && (
               <View className="flex-row justify-between">
                 <Text className="text-sm font-sfmedium text-white">Blood Pressure</Text>
-                <Text className="text-xl font-sfbold text-white">{bloodP}</Text>
+                <Text className="text-xl font-sfbold text-white">{bloodP}<Text className="text-base font-sfbold text-white"> Hg</Text></Text>
               </View>
             )}
 
             {bloodS && (
               <View className="flex-row justify-between">
                 <Text className="text-sm font-sfmedium text-white">Blood Sugar</Text>
-                <Text className="text-xl font-sfbold text-white">{bloodS}</Text>
+                <Text className="text-xl font-sfbold text-white">{bloodS}<Text className="text-base font-sfbold text-white"> mg/dL</Text></Text>
               </View>
             )}
 
@@ -92,7 +93,7 @@ const MedCardModal = ({ toggleModal, height, weight, hbeat, bmi, hemo, isModal, 
              
             {qrCodeIcon && (
                <View className="flex-row justify-between pt-5">
-               <Ionicons name={qrCodeIcon} size={30} color="white" />
+               <Entypo name="share" size={28} color="white" />
              </View>
             )}
           </View>
