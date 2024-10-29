@@ -59,7 +59,7 @@ const TabsLayout = () => {
                     }} 
                 />
                 <Tabs.Screen 
-                    name="bookmark" 
+                    name="records" 
                     options={{
                         title: 'Bookmark',
                         headerShown: false,

@@ -41,7 +41,7 @@ const VaccCardModal = ({ name, vaccine, fdose, sdose, issued, qrCodeIcon }) => {
 
         <View className="space-y-1">
           <Text className="text-sm font-sfmedium text-black">ISSUED BY</Text>
-          <Text className="text-xl font-sfbold text-white">{issued}</Text>
+          <Text className="text-2xl font-sfbold text-white">{issued}</Text>
         </View>
       </View>
 

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, StatusBar  } from 'react-native'
 import { SplashScreen, Stack, useFocusEffect } from 'expo-router';
 import { useFonts } from 'expo-font';
 

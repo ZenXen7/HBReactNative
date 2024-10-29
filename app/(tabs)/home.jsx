@@ -12,14 +12,14 @@ import Entypo from '@expo/vector-icons/Entypo';
 import VaccCard from '../../components/VaccCard';
 
 const Home = () => {
-  const { user, userInfo, userDetails } = useGlobalContext();
+  const { user, userInfo, userDetails, vaccCard } = useGlobalContext();
   const [modalOpacity] = useState(new Animated.Value(0)); 
   const [modalTranslateY] = useState(new Animated.Value(100)); 
 
   const [isModalVisible, setModalVisible] = useState(false);
   const [modalType, setModalType] = useState(null); // New state to track which modal
-  console.log("User Details:", userDetails);
-  console.log("User Details:", userInfo);
+ 
+  console.log("Vacc Info", vaccCard)
   const toggleModal = (type = null) => {
     if (isModalVisible) {
       Animated.timing(modalOpacity, {
@@ -116,11 +116,11 @@ const Home = () => {
                 >
                   {modalType === 'vaccCard' ? (
                     <VaccCardModal
-                      name={user?.username}
-                      vaccine="Moderna COVID-19 Vaccine"
-                      fdose="1/1/21"
-                      sdose="1/29/21"
-                      issued="Chong Hua Hospital"
+                      name={userInfo?.userFullName}
+                      vaccine={vaccCard?.vaccineName}
+                      fdose={vaccCard?.firstDose}
+                      sdose={vaccCard?.secondDose}
+                      issued={vaccCard?.issuedBy}
                       qrCode="https://example.com/qr-code-url"
                     />
                   ) : (
