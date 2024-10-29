@@ -29,7 +29,13 @@ Welcome to **Healthbook** — a cutting-edge digital health tracker designed to 
 
 
 ### Modals 
-<img src="https://github.com/user-attachments/assets/8ea6d9a3-8c3a-4622-9f08-a32711889145" alt="Modals" width="300" height="600" />
+<img src="https://github.com/user-attachments/assets/7cc9a3a1-e2be-436d-b236-70c49aa20aa4" alt="Modals" width="300" height="600" />
+
+### Modals 
+<img src="https://github.com/user-attachments/assets/521d7065-877f-4671-aea8-136a5d651bdb" alt="Modals" width="300" height="600" />
+
+### Records 
+<img src="https://github.com/user-attachments/assets/6ffde71f-334e-46fd-aeb3-6ba280c17abe" alt="Modals" width="300" height="600" />
 
 ## 🛠️ Tech Stack
 
