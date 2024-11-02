@@ -40,6 +40,8 @@ const TabsLayout = () => {
                         shadowOffset: { width: 0, height: 2 },
                         shadowOpacity: 0.1,
                         shadowRadius: 3,
+                        borderTopWidth: 1,  // Add a small top border
+                        borderTopColor: '#d1d1d6',  // Light color for the border
                     },
                 }}
             >
@@ -73,21 +75,7 @@ const TabsLayout = () => {
                         ),
                     }} 
                 />
-                <Tabs.Screen 
-                    name="create" 
-                    options={{
-                        title: 'Create',
-                        headerShown: false,
-                        tabBarIcon: ({ color, focused }) => (
-                            <TabIcon
-                                icon="add"
-                                color={color}
-                                name="Create"
-                                focused={focused}
-                            />
-                        ),
-                    }} 
-                />
+              
                 <Tabs.Screen 
                     name="profile" 
                     options={{
