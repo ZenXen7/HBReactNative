@@ -7,7 +7,7 @@ import SocRecord from '../../components/SocRecord';
 import FamRecord from '../../components/FamRecord';
 
 const Records = () => {
-  const [activeTab, setActiveTab] = useState('Vaccination');
+  const [activeTab, setActiveTab] = useState('Medication');
 
   const renderTabContent = () => {
     switch (activeTab) {
