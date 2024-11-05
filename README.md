@@ -15,23 +15,24 @@ Welcome to **Healthbook** — a cutting-edge digital health tracker designed to 
 
 ## 🎨 Screenshots
 
-## 🎥 Video Demo
-[Watch the Video Demo](![RPReplay_Final17306053951-ezgif com-optimize](https://github.com/user-attachments/assets/69c50e17-e71c-400e-abcb-fcbafd8fc918)
-)
+### 🎥 GIF Demo (Slow FPS due to GIF)
 
+<div style="display: flex; align-items: center; justify-content: space-between;">
+  <img src="https://github.com/user-attachments/assets/69c50e17-e71c-400e-abcb-fcbafd8fc918" alt="Demo GIF" width="300" height="600" style="margin-right: 10px;"/>
+  
+  <div style="display: flex; flex-direction: column;">
 
-### Dashboard Page (Unfinished)
-<img src="https://github.com/user-attachments/assets/20807c40-2ddc-47ed-aba5-d684ded5c1e4" alt="Dashboard" width="300" height="600"/>
+    ### Dashboard Page (Unfinished)
+    <img src="https://github.com/user-attachments/assets/20807c40-2ddc-47ed-aba5-d684ded5c1e4" alt="Dashboard" width="300" height="600" style="margin-bottom: 10px;"/>
 
+    ### Modals 
+    <img src="https://github.com/user-attachments/assets/7cc9a3a1-e2be-436d-b236-70c49aa20aa4" alt="Modals" width="300" height="600" style="margin-bottom: 10px;" />
 
-### Modals 
-<img src="https://github.com/user-attachments/assets/7cc9a3a1-e2be-436d-b236-70c49aa20aa4" alt="Modals" width="300" height="600" />
-
-### Modals 
-<img src="https://github.com/user-attachments/assets/521d7065-877f-4671-aea8-136a5d651bdb" alt="Modals" width="300" height="600" />
-
-### Records 
-<img src="https://github.com/user-attachments/assets/6ffde71f-334e-46fd-aeb3-6ba280c17abe" alt="Modals" width="300" height="600" />
+    ### Records 
+    <img src="https://github.com/user-attachments/assets/6ffde71f-334e-46fd-aeb3-6ba280c17abe" alt="Records" width="300" height="600" />
+    
+  </div>
+</div>
 
 ## 🛠️ Tech Stack
 
