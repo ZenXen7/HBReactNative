@@ -5,6 +5,7 @@ import MedRecord from '../../components/MedRecord';
 import VacRecord from '../../components/VacRecord';
 import SocRecord from '../../components/SocRecord';
 import FamRecord from '../../components/FamRecord';
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 const Records = () => {
   const [activeTab, setActiveTab] = useState('Vaccination');
@@ -93,8 +94,12 @@ const Records = () => {
   return (
     <SafeAreaView className="bg-zinc-100 flex-1">
       {/* Header */}
-      <View className="bg-zinc-100 py-4 px-4 flex-row position">
+      <View className="bg-zinc-100 py-4 px-4 flex-row position justify-between">
         <Text className="ml-3 text-black text-4xl font-sfbold">Records</Text>
+        <TouchableOpacity className="mr-2 mt-2">
+          <AntDesign name="addfile" size={24} color="blue" />
+          </TouchableOpacity>
+       
       </View>
 
       <ScrollView>
