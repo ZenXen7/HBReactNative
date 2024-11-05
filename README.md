@@ -16,7 +16,8 @@ Welcome to **Healthbook** — a cutting-edge digital health tracker designed to 
 ## 🎨 Screenshots
 
 ## 🎥 Video Demo
-[Watch the Video Demo](https://cdn.discordapp.com/attachments/903191461758107680/1302478380989550645/RPReplay_Final1730605395.mov?ex=672ae604&is=67299484&hm=63106bb4ae57b3e55be0f5c532ad9f90cb5e22047dfcfcee2bb39fbb2095ba8b&)
+[Watch the Video Demo](![RPReplay_Final17306053951-ezgif com-optimize](https://github.com/user-attachments/assets/69c50e17-e71c-400e-abcb-fcbafd8fc918)
+)
 
 
 ### Dashboard Page (Unfinished)
