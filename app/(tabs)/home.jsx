@@ -55,14 +55,10 @@ const Home = () => {
           {/* User Profile Section */}
           <View className="flex-row justify-between items-center mb-6">
             <View className="flex-row items-center">
-              <Image
-                source={images.profile}
-                className="w-12 h-12 rounded-full mr-3"
-                resizeMode="cover"
-              />
+              
               <View className="ml-2">
-                <Text className="font-pmedium text-sm text-black">Welcome back,</Text>
-                <Text className="text-2xl font-psemibold">{user?.username}</Text>
+                <Text className="font-pmedium text-base text-black">Welcome back,</Text>
+                <Text className="text-3xl font-sfbold">{user?.username}</Text>
               </View>
             </View>
             <View className="mt-1.5">

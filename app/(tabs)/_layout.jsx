@@ -40,6 +40,8 @@ const TabsLayout = () => {
                         shadowOffset: { width: 0, height: 2 },
                         shadowOpacity: 0.1,
                         shadowRadius: 3,
+                        borderTopWidth: 1,  // Add a small top border
+                        borderTopColor: '#d1d1d6',  // Light color for the border
                     },
                 }}
             >
