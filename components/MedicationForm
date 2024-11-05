@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, Animated, Easing, ScrollView }
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AntDesign from '@expo/vector-icons/AntDesign';
 
-const RecordForm = ({ isVisible, onClose }) => {
+const MedicationForm = ({ isVisible, onClose }) => {
   const [slideAnim] = useState(new Animated.Value(500)); // Starts off-screen
 
 
@@ -83,4 +83,4 @@ const RecordForm = ({ isVisible, onClose }) => {
   );
 };
 
-export default RecordForm;
+export default MedicationForm;

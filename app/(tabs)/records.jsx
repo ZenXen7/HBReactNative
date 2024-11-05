@@ -5,10 +5,10 @@ import MedRecord from '../../components/MedRecord';
 import VacRecord from '../../components/VacRecord';
 import SocRecord from '../../components/SocRecord';
 import FamRecord from '../../components/FamRecord';
-import AntDesign from '@expo/vector-icons/AntDesign';
-import RecordForm from '../../components/RecordForm'; 
 import SurgicalRecord from '../../components/SurgicalRecord';
 import AllergyRecord from '../../components/AllergyRecord';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import MedicationForm from '../../components/MedicationForm'; 
 
 const Records = () => {
   const [showForm, setShowForm] = useState(false);
@@ -207,7 +207,7 @@ const Records = () => {
 
     
         {showForm && (
-        <RecordForm
+        <MedicationForm
           isVisible={showForm}
           onClose={() => setShowForm(false)}
         />
