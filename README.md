@@ -15,14 +15,9 @@ Welcome to **Healthbook** — a cutting-edge digital health tracker designed to 
 
 ## 🎨 Screenshots
 
-### Landing Page
-<img src="https://github.com/user-attachments/assets/8e79b118-924a-4125-8d15-84389a44617f" alt="Landing Page" width="300" height="600" />
+## 🎥 Video Demo
+[Watch the Video Demo](https://cdn.discordapp.com/attachments/903191461758107680/1302478380989550645/RPReplay_Final1730605395.mov?ex=672ae604&is=67299484&hm=63106bb4ae57b3e55be0f5c532ad9f90cb5e22047dfcfcee2bb39fbb2095ba8b&)
 
-### Login Page
-<img src="https://github.com/user-attachments/assets/f31cedd1-6c0a-429b-bc18-62f961ac7552" alt="Login Page" width="300" height="600" />
-
-### Sign Up Page
-<img src="https://github.com/user-attachments/assets/c6ac39bd-b898-484d-b20e-afbdcf8f1b42" alt="Sign Up Page" width="300" height="600" />
 
 ### Dashboard Page (Unfinished)
 <img src="https://github.com/user-attachments/assets/20807c40-2ddc-47ed-aba5-d684ded5c1e4" alt="Dashboard" width="300" height="600"/>
