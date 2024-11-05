@@ -31,7 +31,7 @@ const Home = () => {
         setModalType(null); // Reset modal type
       });
     } else {
-      setModalType(type); // Set the type of modal to open
+      setModalType(type); 
       setModalVisible(true);
       Animated.timing(modalOpacity, {
         toValue: 1,
@@ -72,11 +72,11 @@ const Home = () => {
 
           {/* Profile Card */}
           <ProfileCard 
-             name={userInfo?.userFullName || "Unknown Name"} // Replace with actual field from userInfo
-             phone={userInfo?.phoneNum || "Unknown Phone"} // Adjust the field names as per your userInfo structure
-             location={userInfo?.location || "Unknown Location"} // Same here
-             gender={userInfo?.gender || "Unknown"} // Adjust accordingly
-             birthDate={userInfo?.bday || "Unknown"} // Adjust accordingly
+             name={userInfo?.userFullName || "Unknown Name"} 
+             phone={userInfo?.phoneNum || "Unknown Phone"} 
+             location={userInfo?.location || "Unknown Location"}
+             gender={userInfo?.gender || "Unknown"} 
+             birthDate={userInfo?.bday || "Unknown"} 
              qrCodeIcon="qr-code-outline"
              containerStyles={{ marginBottom: -15 }}
           />
@@ -103,7 +103,7 @@ const Home = () => {
               <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
                 <Animated.View
                   style={{
-                    width: modalType === 'vaccCard' ? 383 : 350, // Set different widths for each modal type
+                    width: modalType === 'vaccCard' ? 383 : 350, 
                     padding: 20, 
                     borderRadius: 20,
                     opacity: modalOpacity, 

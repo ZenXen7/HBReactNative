@@ -1,14 +1,39 @@
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import { View, Text, ScrollView, TouchableOpacity, Modal, Animated, Easing } from 'react-native';
+import React, { useState, useRef, useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MedRecord from '../../components/MedRecord';
 import VacRecord from '../../components/VacRecord';
 import SocRecord from '../../components/SocRecord';
 import FamRecord from '../../components/FamRecord';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import RecordForm from '../../components/RecordForm'; 
+import SurgicalRecord from '../../components/SurgicalRecord';
+import AllergyRecord from '../../components/AllergyRecord';
 
 const Records = () => {
+  const [showForm, setShowForm] = useState(false);
   const [activeTab, setActiveTab] = useState('Medication');
+  
+  const slideAnim = useRef(new Animated.Value(0)).current;
+
+  const openModal = () => {
+    setModalVisible(true);
+    Animated.timing(slideAnim, {
+      toValue: 1,
+      duration: 500,
+      easing: Easing.out(Easing.ease),
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const closeModal = () => {
+    Animated.timing(slideAnim, {
+      toValue: 0,
+      duration: 500,
+      easing: Easing.in(Easing.ease),
+      useNativeDriver: true,
+    }).start(() => setModalVisible(false));
+  };
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -22,7 +47,7 @@ const Records = () => {
               quantity="50"
               onEdit={() => console.log("Edit Medication")}
             />
-              <MedRecord
+            <MedRecord
               datePres="1/15/2019"
               diagnosis="Amoxicillin"
               dosage="1g Capsules"
@@ -39,24 +64,21 @@ const Records = () => {
               genName="Flu Vaccine"
               siteGiven="Upper Arm"
               doseMl="2 doses"
-              nextDose="25.11.2024"
+              nextDose="25/11/2024"
             />
-            <VacRecord
-              dateAdd="12/11/2024"
-              genName="Flu Vaccine"
-              siteGiven="Upper Arm"
-              doseMl="2 doses"
-              nextDose="25.11.2024"
-            />
+            {/* More VacRecords can go here */}
 
-           <VacRecord
-              dateAdd="1/3/2025"
-              genName="Flu Vaccine"
+            <VacRecord
+              dateAdd="10/16/2024"
+              genName="Polio"
               siteGiven="Upper Arm"
               doseMl="2 doses"
-              nextDose="25.11.2024"
+              nextDose="NA"
             />
+            
           </View>
+
+          
         );
       case 'Social':
         return (
@@ -72,20 +94,50 @@ const Records = () => {
           </View>
         );
       case 'Family History':
-        return(
+        return (
           <View className="space-y-6">
-          <FamRecord
-            dateAdd="11/2/2024"
-            relation="Mother"
-            condition="Type 2 Diabetes"
-          />
-           <FamRecord
-            dateAdd="11/2/2024"
-            relation="Father"
-            condition="High Blood Pressure"
-          />
-        </View>
+            <FamRecord
+              dateAdd="11/2/2024"
+              relation="Mother"
+              condition="Type 2 Diabetes"
+            />
+            <FamRecord
+              dateAdd="11/2/2024"
+              relation="Father"
+              condition="High Blood Pressure"
+            />
+          </View>
+        );
+      case 'Surgical':
+        return (
+          <View className="space-y-6" >
+              <SurgicalRecord
+                dateAdd="16/5/2019"
+                procedure="Penis Removal"
+                hospital="Cebu Doctors Hospital"
+                operDate="24/5/2008"
+              />
+
+          </View>
+        );
+      case 'Allergy':
+        return (
+          <View className="space-y-6">
+            <AllergyRecord
+              dateAdd="2/5/2017"
+              substance="Shell Fish"
+              severity="Severe"
+              critical="High"
+            />
+            <AllergyRecord
+              dateAdd="2/8/2017"
+              substance="Peanut"
+              severity="Severe"
+              critical="High"
+            />
+          </View>
         )
+      
       default:
         return null;
     }
@@ -93,17 +145,18 @@ const Records = () => {
 
   return (
     <SafeAreaView className="bg-zinc-100 flex-1">
+   
       {/* Header */}
       <View className="bg-zinc-100 py-4 px-4 flex-row position justify-between">
         <Text className="ml-3 text-black text-4xl font-sfbold">Records</Text>
-        <TouchableOpacity className="mr-2 mt-2">
-          <AntDesign name="addfile" size={24} color="blue" />
-          </TouchableOpacity>
-       
+        <TouchableOpacity className="mr-2 mt-2" onPress={() => setShowForm(true)}>
+      <AntDesign name="addfile" size={24} color="blue" />
+        </TouchableOpacity>
+
       </View>
 
       <ScrollView>
-   
+        {/* Tab Navigation */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mt-5 px-4 space-x-6 ml-3">
           <TouchableOpacity onPress={() => setActiveTab('Medication')}>
             <Text className={activeTab === 'Medication' ? "text-blue-500 text-lg font-pbold" : "text-gray-400 text-lg font-pbold"}>
@@ -125,6 +178,23 @@ const Records = () => {
               Family
             </Text>
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => setActiveTab('Surgical')}>
+            <Text className={activeTab === 'Surgical' ? "text-blue-500 text-lg font-pbold" : "text-gray-400 text-lg font-pbold"}>
+              Surgical
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setActiveTab('Allergy')}>
+            <Text className={activeTab === 'Allergy' ? "text-blue-500 text-lg font-pbold" : "text-gray-400 text-lg font-pbold"}>
+              Allergy
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setActiveTab('Vitals')}>
+            <Text className={activeTab === 'Vitals' ? "text-blue-500 text-lg font-pbold" : "text-gray-400 text-lg font-pbold"}>
+              Vitals
+            </Text>
+          </TouchableOpacity>
+          <View></View>
+          
           <View>
 
           </View>
@@ -134,6 +204,15 @@ const Records = () => {
           {renderTabContent()}
         </View>
       </ScrollView>
+
+    
+        {showForm && (
+        <RecordForm
+          isVisible={showForm}
+          onClose={() => setShowForm(false)}
+        />
+      )}       
+     
     </SafeAreaView>
   );
 };
