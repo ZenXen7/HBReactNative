@@ -2,14 +2,14 @@ import { View, Text, Image, ScrollView, Modal, TouchableOpacity, Animated, Touch
 import React, { useState } from 'react';
 import { images } from '../../constants';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import ProfileCard from '../../components/ProfileCard';
-import MedCard from '../../components/MedCard';
+import ProfileCard from '../../components/cards/ProfileCard';
+import MedCard from '../../components/cards/MedCard';
 import { useGlobalContext } from '../../context/GlobalProvider';
 import MedCardModal from '../../components/MedCardModal'; 
 import VaccCardModal from '../../components/VaccCardModal';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Entypo from '@expo/vector-icons/Entypo';
-import VaccCard from '../../components/VaccCard';
+import VaccCard from '../../components/cards/VaccCard';
 
 const Home = () => {
   const { user, userInfo, userDetails, vaccCard } = useGlobalContext();

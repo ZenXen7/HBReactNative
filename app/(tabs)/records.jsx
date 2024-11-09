@@ -1,16 +1,16 @@
 import { View, Text, ScrollView, TouchableOpacity, Modal, Animated, Easing } from 'react-native';
 import React, { useState, useRef, useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import MedRecord from '../../components/MedRecord';
-import VacRecord from '../../components/VacRecord';
-import SocRecord from '../../components/SocRecord';
-import FamRecord from '../../components/FamRecord';
-import SurgicalRecord from '../../components/SurgicalRecord';
-import AllergyRecord from '../../components/AllergyRecord';
+import MedRecord from '../../components/records/MedRecord';
+import VacRecord from '../../components/records/VacRecord';
+import SocRecord from '../../components/records/SocRecord';
+import FamRecord from '../../components/records/FamRecord';
+import SurgicalRecord from '../../components/records/SurgicalRecord';
+import AllergyRecord from '../../components/records/AllergyRecord';
 import AntDesign from '@expo/vector-icons/AntDesign';
-import MedicationForm from '../../components/MedicationForm';
-import VaccinationForm from '../../components/VaccinationForm';
-import VitalsRecord from '../../components/VitalsRecord';
+import MedicationForm from '../../components/forms/MedicationForm';
+import VaccinationForm from '../../components/forms/VaccinationForm';
+import VitalsRecord from '../../components/records/VitalsRecord';
 
 const Records = () => {
   const [showForm, setShowForm] = useState(false);
