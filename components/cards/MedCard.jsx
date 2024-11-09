@@ -7,12 +7,12 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 
 const MedCard = ({ height, weight, hbeat, bmi, hemo, ethni, containerStyles, isModal }) => {
   return (
-    <View style={{ borderRadius: 35, ...containerStyles }} className="bg-blue-600 p-6 space-y-4">
+    <View style={{ borderRadius: 35, ...containerStyles }} className="bg-black p-6 space-y-4">
       <View className="space-y-3">
         
       <View className="flex-row justify-between mb-2">
           <Text className="text-2xl font-bold text-white">Medical Card</Text>
-          <FontAwesome5 name="file-medical" size={30} color="white" />
+          <FontAwesome5 name="file-medical" size={30} color="skyblue" />
         </View>
 
         {/* Height */}

@@ -10,7 +10,9 @@ import AllergyRecord from '../../components/records/AllergyRecord';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import MedicationForm from '../../components/forms/MedicationForm';
 import VaccinationForm from '../../components/forms/VaccinationForm';
+import FamilyForm from '../../components/forms/FamilyForm';
 import VitalsRecord from '../../components/records/VitalsRecord';
+
 
 const Records = () => {
   const [showForm, setShowForm] = useState(false);
@@ -246,7 +248,7 @@ const Records = () => {
             onClose={() => setShowForm(false)}
           />
         ) : activeTab === 'Family History' ? (
-          <FamilyHistoryForm
+          <FamilyForm
             isVisible={showForm}
             onClose={() => setShowForm(false)}
           />

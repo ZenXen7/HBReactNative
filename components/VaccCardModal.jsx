@@ -19,28 +19,28 @@ const VaccCardModal = ({ name, vaccine, fdose, sdose, issued, qrCodeIcon }) => {
       {/* User Information Section */}
       <View className="space-y-2">
         <View className="-space-y-5 mb-3">
-          <Text className="text-sm font-sfmedium text-black">NAME</Text>
+          <Text className="text-sm font-pmedium text-black">NAME</Text>
           <Text className="text-2xl font-sfbold text-white">{name}</Text>
         </View>
         
         <View className="-space-y-5 mb-3">
-          <Text className="text-sm font-sfmedium text-black">VACCINE</Text>
+          <Text className="text-sm font-pmedium text-black">VACCINE</Text>
           <Text className="text-xl font-sfbold text-white">{vaccine}</Text>
         </View>
 
         <View className="flex-row justify-between">
           <View className="-space-y-5 mb-3">
-            <Text className="text-sm font-sfmedium text-black">DATE</Text>
+            <Text className="text-sm font-pmedium text-black">DATE</Text>
             <Text className="text-xl font-sfbold text-white">{fdose}</Text>
           </View>
           <View className="pr-8 space-y-1">
-            <Text className="text-sm font-sfmedium text-black">DATE</Text>
+            <Text className="text-sm font-pmedium text-black">DATE</Text>
             <Text className="text-xl font-sfbold text-white">{sdose}</Text>
           </View>
         </View>
 
         <View className="space-y-1">
-          <Text className="text-sm font-sfmedium text-black">ISSUED BY</Text>
+          <Text className="text-sm font-pmedium text-black">ISSUED BY</Text>
           <Text className="text-2xl font-sfbold text-white">{issued}</Text>
         </View>
       </View>
