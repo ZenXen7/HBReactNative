@@ -8,7 +8,9 @@ import FamRecord from '../../components/FamRecord';
 import SurgicalRecord from '../../components/SurgicalRecord';
 import AllergyRecord from '../../components/AllergyRecord';
 import AntDesign from '@expo/vector-icons/AntDesign';
-import MedicationForm from '../../components/MedicationForm'; 
+import MedicationForm from '../../components/MedicationForm';
+import VaccinationForm from '../../components/VaccinationForm';
+import VitalsRecord from '../../components/VitalsRecord';
 
 const Records = () => {
   const [showForm, setShowForm] = useState(false);
@@ -75,10 +77,7 @@ const Records = () => {
               doseMl="2 doses"
               nextDose="NA"
             />
-            
           </View>
-
-          
         );
       case 'Social':
         return (
@@ -117,7 +116,6 @@ const Records = () => {
                 hospital="Cebu Doctors Hospital"
                 operDate="24/5/2008"
               />
-
           </View>
         );
       case 'Allergy':
@@ -137,7 +135,18 @@ const Records = () => {
             />
           </View>
         )
-      
+      case 'Vitals':
+        return (
+          <View className="space-y-6" >
+              <VitalsRecord
+                dateAdd="2/7/2016"
+                temp="37.2"
+                pulseRate="75bpm"
+                resprate="16bpm"
+                glucose="110 mg"
+                />
+          </View>
+        )
       default:
         return null;
     }
@@ -149,10 +158,27 @@ const Records = () => {
       {/* Header */}
       <View className="bg-zinc-100 py-4 px-4 flex-row position justify-between">
         <Text className="ml-3 text-black text-4xl font-sfbold">Records</Text>
-        <TouchableOpacity className="mr-2 mt-2" onPress={() => setShowForm(true)}>
-      <AntDesign name="addfile" size={24} color="blue" />
-        </TouchableOpacity>
+        <TouchableOpacity 
+          className="mr-2 mt-2"
+          onPress={() => setShowForm(true)}
+        >
+        
+          <AntDesign 
+            name="addfile" 
+            size={24} 
+            color={
+              activeTab === 'Medication' ? 'blue' :
+              activeTab === 'Vaccination' ? 'red' :
+              activeTab === 'Social' ? 'violet' :
+              activeTab === 'Family History' ? 'orange' :
+              activeTab === 'Surgical' ? 'green' :
+              activeTab === 'Allergy' ? 'purple' :
+              activeTab === 'Vitals' ? 'darkred' :
+              'gray' 
+            }
+          />
 
+        </TouchableOpacity>
       </View>
 
       <ScrollView>
@@ -194,10 +220,7 @@ const Records = () => {
             </Text>
           </TouchableOpacity>
           <View></View>
-          
-          <View>
-
-          </View>
+          <View></View>
         </ScrollView>
 
         <View className="my-6 px-4">
@@ -205,14 +228,46 @@ const Records = () => {
         </View>
       </ScrollView>
 
-    
-        {showForm && (
-        <MedicationForm
-          isVisible={showForm}
-          onClose={() => setShowForm(false)}
-        />
-      )}       
      
+      {showForm && (
+        activeTab === 'Medication' ? (
+          <MedicationForm
+            isVisible={showForm}
+            onClose={() => setShowForm(false)}
+          />
+        ) : activeTab === 'Vaccination' ? (
+          <VaccinationForm
+            isVisible={showForm}
+            onClose={() => setShowForm(false)}
+          />
+        ) : activeTab === 'Social' ? (
+          <SocialForm
+            isVisible={showForm}
+            onClose={() => setShowForm(false)}
+          />
+        ) : activeTab === 'Family History' ? (
+          <FamilyHistoryForm
+            isVisible={showForm}
+            onClose={() => setShowForm(false)}
+          />
+        ) : activeTab === 'Surgical' ? (
+          <SurgicalForm
+            isVisible={showForm}
+            onClose={() => setShowForm(false)}
+          />
+        ) : activeTab === 'Allergy' ? (
+          <AllergyForm
+            isVisible={showForm}
+            onClose={() => setShowForm(false)}
+          />
+        ) : activeTab === 'Vitals' ? (
+          <VitalsForm
+            isVisible={showForm}
+            onClose={() => setShowForm(false)}
+          />
+        ) : null
+      )}
+
     </SafeAreaView>
   );
 };
