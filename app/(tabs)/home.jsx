@@ -19,7 +19,7 @@ const Home = () => {
   const [isModalVisible, setModalVisible] = useState(false);
   const [modalType, setModalType] = useState(null); // New state to track which modal
  
-  console.log("Vacc Info", vaccCard)
+
   const toggleModal = (type = null) => {
     if (isModalVisible) {
       Animated.timing(modalOpacity, {

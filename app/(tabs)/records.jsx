@@ -11,15 +11,19 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import MedicationForm from '../../components/forms/MedicationForm';
 import VaccinationForm from '../../components/forms/VaccinationForm';
 import FamilyForm from '../../components/forms/FamilyForm';
+import SurgicalForm from '../../components/forms/SurgicalForm';
+import AllergyForm from '../../components/forms/AllergyForm';
 import VitalsRecord from '../../components/records/VitalsRecord';
+import { useGlobalContext } from '../../context/GlobalProvider';
 
 
 const Records = () => {
+  const { user, userInfo, userDetails, medRecord} = useGlobalContext();
   const [showForm, setShowForm] = useState(false);
   const [activeTab, setActiveTab] = useState('Medication');
   
   const slideAnim = useRef(new Animated.Value(0)).current;
-
+  console.log("Vacc Info", medRecord)
   const openModal = () => {
     setModalVisible(true);
     Animated.timing(slideAnim, {
@@ -44,22 +48,20 @@ const Records = () => {
       case 'Medication':
         return (
           <View className="space-y-6">
+          {medRecord?.map((record) => (
             <MedRecord
-              datePres="1/02/2019"
-              diagnosis="Paracetamol"
-              dosage="500mg Capsules"
-              quantity="50"
+              key={record.$id}  
+              datePres={record.dateAdded}
+              diagnosis={record.genericName}
+              dosage={record.dosage} 
+              quantity={record.quantity || 'N/A'}  
               onEdit={() => console.log("Edit Medication")}
             />
-            <MedRecord
-              datePres="1/15/2019"
-              diagnosis="Amoxicillin"
-              dosage="1g Capsules"
-              quantity="24"
-              onEdit={() => console.log("Edit Medication")}
-            />
-          </View>
-        );
+
+            
+          ))}
+        </View>
+        );  
       case 'Vaccination':
         return (
           <View className="space-y-6">

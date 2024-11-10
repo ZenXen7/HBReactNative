@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { getCurrentUser, getUserDetails, getUserInfo, getUserVaccCard } from "../lib/appwrite"; // Import getUserInfo
+import { getCurrentUser, getUserDetails, getUserInfo, getUserVaccCard, getUserMedicalRecords } from "../lib/appwrite"; // Import getUserInfo
 
 const GlobalContext = createContext();
 export const useGlobalContext = () => useContext(GlobalContext);
@@ -10,6 +10,7 @@ const GlobalProvider = ({ children }) => {
   const [userDetails, setUserDetails] = useState(null); // State for user details
   const [userInfo, setUserInfo] = useState(null); // State for user info
   const [vaccCard, setVaccCard] = useState(null);
+  const [medRecord, setMedRecord] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -29,6 +30,10 @@ const GlobalProvider = ({ children }) => {
 
           const vaccInfo = await getUserVaccCard();
           setVaccCard(vaccInfo);
+
+          const medRecordInfo = await getUserMedicalRecords(); // Retrieve all medical records
+          setMedRecord(medRecordInfo); // Set multiple medical records
+
 
 
         } else {
@@ -50,6 +55,7 @@ const GlobalProvider = ({ children }) => {
         userDetails, // Provide userDetails
         userInfo, // Provide userInfo
         vaccCard,
+        medRecord, 
         loading,
       }}
     >

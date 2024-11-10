@@ -20,7 +20,7 @@ const MedRecord = ({ datePres, diagnosis, dosage, quantity, onEdit }) => {
           </View>
           <View className="flex-row justify-between mb-2">
             <Text className="text-base font-sfbold text-gray-400">Dosage</Text>
-            <Text className="text-base font-sfbold text-black">{dosage}</Text>
+            <Text className="text-base font-sfbold text-black">{dosage}mg</Text>
           </View>
           <View className="flex-row justify-between mb-2">
             <Text className="text-base font-sfbold text-gray-400">Quantity</Text>
