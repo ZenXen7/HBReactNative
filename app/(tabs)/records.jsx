@@ -23,7 +23,7 @@ const Records = () => {
   const [activeTab, setActiveTab] = useState('Medication');
   
   const slideAnim = useRef(new Animated.Value(0)).current;
-  console.log("Vacc Info", medRecord)
+
   const openModal = () => {
     setModalVisible(true);
     Animated.timing(slideAnim, {

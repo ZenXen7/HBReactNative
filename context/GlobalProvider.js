@@ -10,8 +10,19 @@ const GlobalProvider = ({ children }) => {
   const [userDetails, setUserDetails] = useState(null); // State for user details
   const [userInfo, setUserInfo] = useState(null); // State for user info
   const [vaccCard, setVaccCard] = useState(null);
-  const [medRecord, setMedRecord] = useState(null);
+  const [medRecord, setMedRecord] = useState([]);
+  const [famRecord, setFamRecord] = useState([]);
   const [loading, setLoading] = useState(true);
+  
+  
+
+  
+  const addMedRecord = (newRecord) => {
+    setMedRecord((prevRecords) => [...prevRecords, newRecord]);
+  };
+  const addFamRecord = (newRecord) => {
+    setFamRecord((prevRecords) => [...prevRecords, newRecord]);
+  }
 
   useEffect(() => {
     getCurrentUser()
@@ -56,6 +67,7 @@ const GlobalProvider = ({ children }) => {
         userInfo, // Provide userInfo
         vaccCard,
         medRecord, 
+        addMedRecord,
         loading,
       }}
     >

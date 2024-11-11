@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Animated, Easing, ScrollView, Platform } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Animated, Easing, ScrollView, Platform, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { addMedicationRecord } from '../../lib/appwrite'; // adding stuff
+import { useGlobalContext } from '../../context/GlobalProvider'; // adding  stuff
+
 
 const MedicationForm = ({ isVisible, onClose }) => {
+  const { addMedRecord } = useGlobalContext(); // new things
+
   const [slideAnim] = useState(new Animated.Value(500));
   const [date, setDate] = useState(new Date());
+  const [genericName, setGenericName] = useState('');
+  const [dosage, setDosage] = useState('');
+  const [quantity, setQuantity] = useState('');
   const [showDatePicker, setShowDatePicker] = useState(false);
 
   const handleDateChange = (event, selectedDate) => {
@@ -15,6 +23,15 @@ const MedicationForm = ({ isVisible, onClose }) => {
   };
 
   const closeDatePicker = () => setShowDatePicker(false);
+
+
+  const handleAdd = async () => {
+    const newRecord = await addMedicationRecord(date, genericName, dosage, quantity);
+    if (newRecord) {
+      addMedRecord(newRecord);  // Update global context with the new record
+      onClose();  // Close the form after adding the record
+    }
+  };
 
   useEffect(() => {
     if (isVisible) {
@@ -33,6 +50,8 @@ const MedicationForm = ({ isVisible, onClose }) => {
     }
   }, [isVisible]);
 
+ 
+
   return (
     <SafeAreaView className="flex-1 justify-end">
       <Animated.View
@@ -48,9 +67,10 @@ const MedicationForm = ({ isVisible, onClose }) => {
               <Text className="text-lg text-blue-600 font-sfbold ">Cancel</Text>
             </TouchableOpacity>
             <Text className="text-xl text-black font-pbold pr-2">Medication</Text>
-            <TouchableOpacity>
-              <Text className="text-lg text-blue-600 font-sfbold ">Add</Text>
+              <TouchableOpacity onPress={handleAdd}>
+              <Text className="text-lg text-blue-600 font-sfbold">Add</Text>
             </TouchableOpacity>
+
           </View>
 
           <View className="bg-white rounded-xl p-4 space-y-2 mb-3 mt-6">
@@ -62,51 +82,42 @@ const MedicationForm = ({ isVisible, onClose }) => {
             </TouchableOpacity>
 
             <View className="flex-row justify-between items-center border-b border-gray-300 pb-2 mb-3">
-            <Text className="text-lg font-sfbold text-gray-400">Generic Name</Text>
+              <Text className="text-lg font-sfbold text-gray-400">Generic Name</Text>
               <TextInput
                 placeholder="Paracetamol"
                 onFocus={closeDatePicker}
+                value={genericName}
+                onChangeText={setGenericName}
                 className="text-lg font-sfbold flex-1"
-                style={{
-                  textAlign: 'right',
-                  paddingVertical: 0, 
-                  lineHeight: 22, 
-                }}
+                style={{ textAlign: 'right', paddingVertical: 0, lineHeight: 22 }}
               />
             </View>
 
             <View className="flex-row justify-between items-center border-b border-gray-300 pb-2 mb-3">
-            <Text className="text-lg font-sfbold text-gray-400">Dosage</Text>
+              <Text className="text-lg font-sfbold text-gray-400">Dosage</Text>
               <TextInput
                 placeholder="mg/dL"
                 onFocus={closeDatePicker}
+                value={dosage}
+                onChangeText={setDosage}
                 className="text-lg font-sfbold flex-1"
-                style={{
-                  textAlign: 'right',
-                  paddingVertical: 0, 
-                  lineHeight: 22, 
-                }}
-                keyboardType="numeric" 
+                style={{ textAlign: 'right', paddingVertical: 0, lineHeight: 22 }}
+                keyboardType="numeric"
               />
             </View>
-            
-          
+
             <View className="flex-row justify-between items-center">
-          <Text className="text-lg font-sfbold text-gray-400">Quantity</Text>
-          <TextInput
-            placeholder="0"
-            onFocus={closeDatePicker}
-            className="text-lg font-sfbold flex-1"
-            style={{
-              textAlign: 'right',
-              paddingVertical: 0,
-              lineHeight: 22,
-            }}
-            keyboardType="numeric" 
-          />
-        </View>
-
-
+              <Text className="text-lg font-sfbold text-gray-400">Quantity</Text>
+              <TextInput
+                placeholder="0"
+                onFocus={closeDatePicker}
+                value={quantity}
+                onChangeText={setQuantity}
+                className="text-lg font-sfbold flex-1"
+                style={{ textAlign: 'right', paddingVertical: 0, lineHeight: 22 }}
+                keyboardType="numeric"
+              />
+            </View>
           </View>
         </ScrollView>
       </Animated.View>
