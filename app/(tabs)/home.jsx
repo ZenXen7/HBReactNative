@@ -2,14 +2,14 @@ import { View, Text, Image, ScrollView, Modal, TouchableOpacity, Animated, Touch
 import React, { useState } from 'react';
 import { images } from '../../constants';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import ProfileCard from '../../components/ProfileCard';
-import MedCard from '../../components/MedCard';
+import ProfileCard from '../../components/cards/ProfileCard';
+import MedCard from '../../components/cards/MedCard';
 import { useGlobalContext } from '../../context/GlobalProvider';
 import MedCardModal from '../../components/MedCardModal'; 
 import VaccCardModal from '../../components/VaccCardModal';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Entypo from '@expo/vector-icons/Entypo';
-import VaccCard from '../../components/VaccCard';
+import VaccCard from '../../components/cards/VaccCard';
 
 const Home = () => {
   const { user, userInfo, userDetails, vaccCard } = useGlobalContext();
@@ -19,7 +19,7 @@ const Home = () => {
   const [isModalVisible, setModalVisible] = useState(false);
   const [modalType, setModalType] = useState(null); // New state to track which modal
  
-  console.log("Vacc Info", vaccCard)
+
   const toggleModal = (type = null) => {
     if (isModalVisible) {
       Animated.timing(modalOpacity, {
@@ -31,7 +31,7 @@ const Home = () => {
         setModalType(null); // Reset modal type
       });
     } else {
-      setModalType(type); // Set the type of modal to open
+      setModalType(type); 
       setModalVisible(true);
       Animated.timing(modalOpacity, {
         toValue: 1,
@@ -72,11 +72,11 @@ const Home = () => {
 
           {/* Profile Card */}
           <ProfileCard 
-             name={userInfo?.userFullName || "Unknown Name"} // Replace with actual field from userInfo
-             phone={userInfo?.phoneNum || "Unknown Phone"} // Adjust the field names as per your userInfo structure
-             location={userInfo?.location || "Unknown Location"} // Same here
-             gender={userInfo?.gender || "Unknown"} // Adjust accordingly
-             birthDate={userInfo?.bday || "Unknown"} // Adjust accordingly
+             name={userInfo?.userFullName || "Unknown Name"} 
+             phone={userInfo?.phoneNum || "Unknown Phone"} 
+             location={userInfo?.location || "Unknown Location"}
+             gender={userInfo?.gender || "Unknown"} 
+             birthDate={userInfo?.bday || "Unknown"} 
              qrCodeIcon="qr-code-outline"
              containerStyles={{ marginBottom: -15 }}
           />

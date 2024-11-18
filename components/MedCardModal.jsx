@@ -8,13 +8,13 @@ import Entypo from '@expo/vector-icons/Entypo';
 
 const MedCardModal = ({ toggleModal, height, weight, hbeat, bmi, hemo, isModal, ethni, bloodP, bloodS, qrCodeIcon}) => {
     return (
-        <View style={{ borderRadius: 35}} className="bg-blue-600 p-6 space-y-4">
+        <View style={{ borderRadius: 35}} className="bg-black p-6 space-y-4">
           
           {/* Header Section */}
           <View className="flex-row justify-between">
             <Text className="text-2xl font-sfbold text-white">Medical Card</Text>
             <TouchableOpacity onPress={() => console.log("Edit clicked")} style={{ alignSelf: 'flex-end' }}>
-              <MaterialIcons name="edit" size={24} color="white" />
+              <MaterialIcons name="edit" size={24} color="skyblue" />
           </TouchableOpacity>
 
           </View>
