@@ -30,7 +30,8 @@ const TabsLayout = () => {
                     tabBarStyle: {
                         backgroundColor: '#f2f2f7',  // Light background like the image
                         borderRadius: 0,  // Softer rounding
-                        marginHorizontal: 0, 
+                        marginHorizontal: 0,
+                        paddingTop: 10,
                         height: 100,  // Adjusted height
                         position: 'absolute',
                         bottom: 0,  // Space from the bottom
@@ -55,7 +56,7 @@ const TabsLayout = () => {
                                 icon="favorite"
                                 color={color}
                                 name="Summary"
-                                focused={focused}
+                               
                             />
                         ),
                     }} 
@@ -70,7 +71,7 @@ const TabsLayout = () => {
                                 icon="article"
                                 color={color}
                                 name="Records"
-                                focused={focused}
+                                
                             />
                         ),
                     }} 
@@ -86,7 +87,7 @@ const TabsLayout = () => {
                                 icon="settings"
                                 color={color}
                                 name="Profile"
-                                focused={focused}
+                                
                             />
                         ),
                     }} 

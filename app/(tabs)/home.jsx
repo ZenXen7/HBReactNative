@@ -10,6 +10,7 @@ import VaccCardModal from '../../components/VaccCardModal';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Entypo from '@expo/vector-icons/Entypo';
 import VaccCard from '../../components/cards/VaccCard';
+import { StatusBar } from 'expo-status-bar';
 
 const Home = () => {
   const { user, userInfo, userDetails, vaccCard } = useGlobalContext();
@@ -166,6 +167,8 @@ const Home = () => {
 
                   
       </ScrollView>
+      <StatusBar backgroundColor="#000000" style="dark" />
+
     </SafeAreaView>
   );
 };

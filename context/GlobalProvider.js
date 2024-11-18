@@ -44,7 +44,9 @@ const GlobalProvider = ({ children }) => {
 
           const medRecordInfo = await getUserMedicalRecords(); // Retrieve all medical records
           setMedRecord(medRecordInfo); // Set multiple medical records
-
+          
+          // const famRecordInfo = await getUserFamRecord();
+          // setFamRecord(famRecordInfo); 
 
 
         } else {

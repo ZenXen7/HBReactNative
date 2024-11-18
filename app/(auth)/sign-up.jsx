@@ -86,7 +86,7 @@ const SignUp = () => {
 
             <View className="justify-center pt-5 flex-row gap-2">
               <Text className="text-lg text-black font-pregular">Already have an account?</Text>
-              <Link href="/sign-in" className="text-lg font-psemibold text-blue-600">Sign In</Link>
+              <Link push href="/sign-in" className="text-lg font-psemibold text-blue-600">Sign In</Link>
 
             </View>
           </View>
