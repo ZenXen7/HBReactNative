@@ -98,7 +98,7 @@ const Records = () => {
         <Text className="ml-3 text-black text-4xl font-sfbold">Records</Text>
         <TouchableOpacity className="mr-2 mt-2">
           <AntDesign name="addfile" size={24} color="blue" />
-          </TouchableOpacity>
+          </TouchableOpacity> 
        
       </View>
 

@@ -103,7 +103,7 @@ const Home = () => {
               <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
                 <Animated.View
                   style={{
-                    width: modalType === 'vaccCard' ? 383 : 350, // Set different widths for each modal type
+                    width: modalType === 'vaccCard' ? 383 : 350, 
                     padding: 20, 
                     borderRadius: 20,
                     opacity: modalOpacity, 
