@@ -1,53 +1,49 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, Image, ScrollView, Text, View } from 'react-native';
+import { Image, ScrollView, Text, View } from 'react-native';
 import { Redirect, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { images } from '../constants';
 import CustomButton from '../components/CustomButton';
-
-
 import { useGlobalContext } from '../context/GlobalProvider';
 
 export default function App() {
-  
   const { loading, isLogged } = useGlobalContext();
 
   if (!loading && isLogged) return <Redirect href="/home" />;
-  
+
   return (
-    <SafeAreaView className="bg-primary h-full">
+    <SafeAreaView className="bg-primary h-full pt-safe">
       <ScrollView
-        contentContainerStyle={{
-          flexGrow: 0.7, 
-          justifyContent: 'center', 
-          alignItems: 'center',
-        }}
+        contentContainerStyle="flex-grow justify-center items-center px-4"
       >
         <View className="w-full items-center px-4">
-          <Image
-            source={images.hblogo2}
-            className="mb-2 w-[250px] h-[110px]"
-            resizeMode="contain"
-          />
-
+        
           <Image
             source={images.hcard}
-            className="max-w-[400px] w-full h-[320px] mb-3"
+            className="max-w-md h-72 mb-9 mt-20 "
             resizeMode="contain"
           />
 
-          <View className="relative">
-            <Text className="text-3xl text-black font-sfbold text-center">
-              Your all-in-one medical history tracker
+        
+          <View className="w-full mt-3">
+            <Text className="text-5xl text-black font-pbold text-left -ml-4 px-5">
+              All-In-One medical history tracker
             </Text>
+
+            <View className="w-full mt-6">
+            <CustomButton
+              title="Get Started"
+              handlePress={() => router.push('/sign-in')}
+              containerStyles="w-full bg-black rounded-3xl py-4"
+              textStyle="text-white text-lg font-bold"
+            />
           </View>
 
-          <CustomButton
-            title="Continue with Email"
-            handlePress={() => router.push('/sign-in')}
-            containerStyles="w-full mt-8 bg-black"
-          />
+          </View>
+
+          
+          
         </View>
       </ScrollView>
       <StatusBar backgroundColor="#000000" style="dark" />

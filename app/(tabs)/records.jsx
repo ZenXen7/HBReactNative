@@ -1,5 +1,6 @@
 import { View, Text, ScrollView, TouchableOpacity, Modal, Animated, Easing } from 'react-native';
 import React, { useState, useRef, useEffect } from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MedRecord from '../../components/records/MedRecord';
 import VacRecord from '../../components/records/VacRecord';
@@ -15,6 +16,7 @@ import SurgicalForm from '../../components/forms/SurgicalForm';
 import AllergyForm from '../../components/forms/AllergyForm';
 import VitalsRecord from '../../components/records/VitalsRecord';
 import { useGlobalContext } from '../../context/GlobalProvider';
+
 
 
 const Records = () => {
@@ -271,8 +273,11 @@ const Records = () => {
           />
         ) : null
       )}
+       
+       <StatusBar backgroundColor="#000000" style="dark" />
 
     </SafeAreaView>
+    
   );
 };
 
