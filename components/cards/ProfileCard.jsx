@@ -5,7 +5,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 const ProfileCard = ({ name, phone, location, gender, birthDate, qrCodeIcon, containerStyles }) => {
   return (
-    <View style={{ borderRadius: 35, ...containerStyles }} className="bg-white p-6 space-y-4">
+    <View style={{ borderRadius: 35, ...containerStyles }} className="bg-white p-6 space-y-4 border-2 border-gray-200">
        {/* <View className="-mb-2">
           <Text className="text-2xl font-bold text-black">Profile Card</Text>
         </View> */}

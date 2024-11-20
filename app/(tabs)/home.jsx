@@ -52,17 +52,17 @@ const Home = () => {
   return (
     <SafeAreaView className="bg-zinc-100 flex-1">
       <ScrollView>
-        <View className="my-6 px-4 space-y-6">
+        <View className="my-6 px-3 space-y-6">
           {/* User Profile Section */}
           <View className="flex-row justify-between items-center mb-6">
             <View className="flex-row items-center">
               
-              <View className="ml-2">
+              <View className="ml-2 -mt-4">
                 <Text className="font-pmedium text-base text-black">Welcome back,</Text>
                 <Text className="text-3xl font-sfbold">{user?.username}</Text>
               </View>
             </View>
-            <View className="mt-1.5">
+            <View className="-mt-2">
               <Image
                 source={images.hblogosmall}
                 className="w-12 h-12"
@@ -146,6 +146,7 @@ const Home = () => {
               activeOpacity={0.8} 
             >
               <VaccCard 
+                vaccCardName="Covid-19 Vaccination Card"
                 VaccinesIcon="VaccinesIcon"
                 containerStyles="w-full h-full"
               />
@@ -156,7 +157,11 @@ const Home = () => {
               className="flex-1 h-24 -mt-4"
               activeOpacity={0.8}
             >
-              <VaccCard containerStyles="w-full h-full"/>
+                <VaccCard 
+                vaccCardName="Shabu Card"
+                VaccinesIcon="VaccinesIcon"
+                containerStyles="w-full h-full"
+              />
             </TouchableOpacity>
           </View>
           <View></View>
