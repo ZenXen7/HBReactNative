@@ -164,6 +164,12 @@ const Records = () => {
       {/* Header */}
       <View className="bg-zinc-100 py-4 px-4 flex-row position justify-between">
         <Text className="ml-3 text-black text-4xl font-sfbold">Records</Text>
+<<<<<<< HEAD
+        <TouchableOpacity className="mr-2 mt-2">
+          <AntDesign name="addfile" size={24} color="blue" />
+          </TouchableOpacity> 
+       
+=======
         <TouchableOpacity 
           className="mr-2 mt-2"
           onPress={() => setShowForm(true)}
@@ -185,6 +191,7 @@ const Records = () => {
           />
 
         </TouchableOpacity>
+>>>>>>> c87a97feae8572a18bde6fdea4f004acd8f748b9
       </View>
 
       <ScrollView>
